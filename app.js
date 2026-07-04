@@ -1,5 +1,21 @@
-console.log("McVera Intelligence v1");
+function updateClocks() {
+    const usa = new Date().toLocaleTimeString("en-US", {
+        timeZone: "America/New_York",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("McVera panel loaded successfully.");
-});
+    const turkey = new Date().toLocaleTimeString("tr-TR", {
+        timeZone: "Europe/Istanbul",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    document.getElementById("usaTime").innerHTML = usa;
+    document.getElementById("trTime").innerHTML = turkey;
+}
+
+updateClocks();
+setInterval(updateClocks, 1000);
