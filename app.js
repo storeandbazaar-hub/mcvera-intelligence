@@ -1,4 +1,5 @@
 function updateClocks() {
+
     const usa = new Date().toLocaleTimeString("en-US", {
         timeZone: "America/New_York",
         hour: "2-digit",
@@ -13,9 +14,10 @@ function updateClocks() {
         second: "2-digit"
     });
 
-    document.getElementById("usaTime").innerHTML = usa;
-    document.getElementById("trTime").innerHTML = turkey;
+    document.getElementById("usaTime").textContent = usa;
+    document.getElementById("trTime").textContent = turkey;
+
 }
 
 updateClocks();
-setInterval(updateClocks, 1000);
+setInterval(updateClocks,1000);
